@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const EmployeeRow = props => (
     <tr>
         <td>{props.employee.fname}</td>
         <td>{props.employee.lname}</td>
         <td>{props.employee.nic}</td>
-        <td><button>Edit</button></td>
+        <td>
+            <Link to={"/edit/"+props.employee._id} className="btn btn-primary">Edit</Link>
+        </td>
+        <td>
+            <button>Delete</button>
+        </td>
     </tr>
 );
 
